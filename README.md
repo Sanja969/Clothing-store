@@ -1,29 +1,4 @@
-## Star Wars Info App
-
-Mobile web app that gets information about Films, Characters, Planets, and Starships from https://swapi.dev/ - Star Wars API and displaying, using React and Redux. There are 5 different pages, that show information for items regarding the category. All item cards have the arrow button for navigating to the detail page for showing more information about the item. There are search bars for every category to find the desired items.
-
-
-# Live Demo:
-
-[Live Demo Link](https://star-wars-data-app.herokuapp.com/)
-
-# Video:
-
-[About App](https://www.loom.com/share/f3f402ca75e34c609bf9c5353baa86d2)
-
-# Screenshots
-
-<p float="left">
-  <img src="/screenshots/screenshot1.png" alt="star wars" width="200">
-  <img src="/screenshots/screenshot2.png" alt="star wars" width="200">
-  <img src="/screenshots/screenshot3.png" alt="star wars" width="200">
-  <img src="/screenshots/screenshot4.png" alt="star wars" width="200">
-  <img src="/screenshots/screenshot5.png" alt="star wars" width="200">
-  <img src="/screenshots/screenshot6.png" alt="star wars" width="200">
-  <img src="/screenshots/screenshot7.png" alt="star wars" width="200">
-  <img src="/screenshots/screenshot8.png" alt="star wars" width="200">
-</p>
-
+## Clothing Store App
 
 # Getting Started
 
@@ -39,7 +14,7 @@ to get a local copy , clone the repository using git clone
 
 After you clone it run  the following commands
 
- - cd Star-Wars-Data-App
+ - cd Clothing-store
  - npm install
 - npm run start
 
