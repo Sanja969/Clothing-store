@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+## Star Wars Info App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mobile web app that gets information about Films, Characters, Planets, and Starships from https://swapi.dev/ - Star Wars API and displaying, using React and Redux. There are 5 different pages, that show information for items regarding the category. All item cards have the arrow button for navigating to the detail page for showing more information about the item. There are search bars for every category to find the desired items.
 
-## Available Scripts
 
-In the project directory, you can run:
+# Live Demo:
 
-### `npm start`
+[Live Demo Link](https://star-wars-data-app.herokuapp.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Video:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[About App](https://www.loom.com/share/f3f402ca75e34c609bf9c5353baa86d2)
 
-### `npm test`
+# Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p float="left">
+  <img src="/screenshots/screenshot1.png" alt="star wars" width="200">
+  <img src="/screenshots/screenshot2.png" alt="star wars" width="200">
+  <img src="/screenshots/screenshot3.png" alt="star wars" width="200">
+  <img src="/screenshots/screenshot4.png" alt="star wars" width="200">
+  <img src="/screenshots/screenshot5.png" alt="star wars" width="200">
+  <img src="/screenshots/screenshot6.png" alt="star wars" width="200">
+  <img src="/screenshots/screenshot7.png" alt="star wars" width="200">
+  <img src="/screenshots/screenshot8.png" alt="star wars" width="200">
+</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get a local copy up and running follow these simple example steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Download it as a ZIP file
+or
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Clone it in your local machine using GIT
+to get a local copy , clone the repository using git clone
+(git@github.com:Sanja969/Star-Wars-Data-App.git)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After you clone it run  the following commands
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ - cd Star-Wars-Data-App
+ - npm install
+- npm run start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Authors
 
-## Learn More
+👤 **Sanja Mandic**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I am an aspiring web developer from Serbia.
+- GitHub: [@sanjaGit](https://github.com/Sanja969)
+- Twitter: [@sanjaTwit](https://twitter.com/SanjaMandic42)
+- LinkedIn: [@sanjaIn](https://linkedin.com/in/sanja-mandic-823995a2/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
 
-### Code Splitting
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Feel free to check the [issues page](../../issues/).
 
-### Analyzing the Bundle Size
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Give a ⭐️ if you like this project!
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
