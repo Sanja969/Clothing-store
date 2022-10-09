@@ -2,9 +2,9 @@
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
-  signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
+  createUserWithEmailAndPassword,
 } from 'firebase/auth';
 
 import {
@@ -12,7 +12,6 @@ import {
   doc,
   getDoc,
   setDoc,
-  setIndexConfiguration,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -36,12 +35,11 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (userAuth, addisional = {}) => {
+  if (!userAuth) return;
   const userDocRef = doc(db, 'users', userAuth.uid);
-  console.log(userDocRef);
 
   const userSnapshot = await getDoc(userDocRef);
-  console.log(userSnapshot);
 
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
@@ -52,11 +50,20 @@ export const createUserDocumentFromAuth = async (userAuth) => {
         displayName,
         email,
         createdAt,
+        ...addisional,
       });
     } catch (error) {
       console.log('error creating the user', error.message);
     }
   }
 
+  // eslint-disable-next-line consistent-return
   return userDocRef;
+};
+
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+
+  // eslint-disable-next-line no-return-await, consistent-return
+  return await createUserWithEmailAndPassword(auth, email, password);
 };
