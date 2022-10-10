@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from 'firebase/auth';
 
 import {
@@ -66,4 +67,11 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
   // eslint-disable-next-line no-return-await, consistent-return
   return await createUserWithEmailAndPassword(auth, email, password);
+};
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+
+  // eslint-disable-next-line no-return-await, consistent-return
+  return await signInWithEmailAndPassword(auth, email, password);
 };
