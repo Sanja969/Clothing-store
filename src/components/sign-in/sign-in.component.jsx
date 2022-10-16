@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
-import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
+import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
 import './sign-in.styles.scss';
 import Button from '../button/button.component';
@@ -22,8 +22,7 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubnmit = async (event) => {
@@ -59,7 +58,7 @@ const SignInForm = () => {
         <FormInput required type="email" onChange={handleChange} name="email" value={email} label="Email" />
         <FormInput required type="password" onChange={handleChange} name="password" value={password} label="Password" />
         <div className="buttons-container">
-          <Button type="submit">Sign In</Button>
+          <Button type="submit" buttonType="default">Sign In</Button>
           <Button onClick={signInWithGoogle} type="button" buttonType="google">
             Google Sign In
           </Button>

@@ -1,3 +1,4 @@
+/* eslint-disable no-return-await */
 /* eslint-disable no-unused-vars */
 import { initializeApp } from 'firebase/app';
 import {
@@ -6,6 +7,8 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth';
 
 import {
@@ -75,3 +78,7 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   // eslint-disable-next-line no-return-await, consistent-return
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);

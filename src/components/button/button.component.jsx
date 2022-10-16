@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-props-no-spreading */
-import PropTypes from 'prop-types';
 import './button.styles.scss';
 
 const BUTTON_TYPE_CLASSES = {
@@ -16,10 +16,5 @@ const Button = ({ children, buttonType, ...otherProps }) => (
     {children}
   </button>
 );
-
-Button.propTypes = {
-  children: PropTypes.instanceOf(Object).isRequired,
-  buttonType: PropTypes.string.isRequired,
-};
 
 export default Button;
