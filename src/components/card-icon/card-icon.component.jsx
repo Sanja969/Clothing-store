@@ -9,12 +9,12 @@ import { CardContext } from '../../context/card.context';
 import './card-icon.styles.scss';
 
 const CardIcon = () => {
-  const { isCardOpen, setIsCardOpen } = useContext(CardContext);
+  const { isCardOpen, setIsCardOpen, cardCount } = useContext(CardContext);
   const toggleCard = () => setIsCardOpen(!isCardOpen);
   return (
     <div className="card-icon-container" onClick={(toggleCard)}>
       <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">0</span>
+      <span className="item-count">{cardCount}</span>
     </div>
   );
 };

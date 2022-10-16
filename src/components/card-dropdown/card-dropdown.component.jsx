@@ -1,11 +1,17 @@
 /* eslint-disable arrow-body-style */
+import { useContext } from 'react';
 import './card-dropdown.styles.scss';
 import Button from '../button/button.component';
+import CardItem from '../card-item/card-item.component';
+import { CardContext } from '../../context/card.context';
 
 const CardDropdown = () => {
+  const { cardItems } = useContext(CardContext);
   return (
     <div className="card-dropdown-container">
-      <div className="card-items" />
+      <div className="card-items">
+        {cardItems.map((item) => <CardItem key={item.id} cardItem={item} />)}
+      </div>
       <Button>GO TO CHECKOUT</Button>
     </div>
   );
