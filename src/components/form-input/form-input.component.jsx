@@ -1,23 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from 'prop-types';
-import './form-input.styles.scss';
+import { FormInputLabel, Input, Group } from './form-input.styles';
 
 const FormInput = ({ label, ...otherProps }) => (
-  <div className="group">
-    <input className="form-input" {...otherProps} />
+  <Group>
+    <Input {...otherProps} />
     {
       label && (
-      <label
-        className={`${
-          otherProps.value.length ? 'shrink' : ''
-        } form-input-label`}
-      >
+      <FormInputLabel shrink={otherProps.value.length}>
         {label}
-      </label>
+      </FormInputLabel>
       )
     }
-  </div>
+  </Group>
 );
 
 FormInput.propTypes = {

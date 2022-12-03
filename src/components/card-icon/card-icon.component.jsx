@@ -1,21 +1,24 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable arrow-body-style */
-import { useContext } from 'react';
-import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCardCount, selectIsCardOpen } from '../../store/card/card.selector';
+import { setIsCardOpen } from '../../store/card/card.action';
 
-import { CardContext } from '../../context/card.context';
-
-import './card-icon.styles.scss';
+import { ShoppingIcon, ItemCount, CardIconContainer } from './card-icon.styles';
 
 const CardIcon = () => {
-  const { isCardOpen, setIsCardOpen, cardCount } = useContext(CardContext);
-  const toggleCard = () => setIsCardOpen(!isCardOpen);
+  const dispatch = useDispatch();
+  const cardCount = useSelector(selectCardCount);
+  const isCardOpen = useSelector(selectIsCardOpen);
+
+  const toggleCard = () => dispatch(setIsCardOpen(!isCardOpen));
+
   return (
-    <div className="card-icon-container" onClick={(toggleCard)}>
-      <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">{cardCount}</span>
-    </div>
+    <CardIconContainer onClick={(toggleCard)}>
+      <ShoppingIcon />
+      <ItemCount>{cardCount}</ItemCount>
+    </CardIconContainer>
   );
 };
 

@@ -1,22 +1,22 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
-import './card-item.styles.scss';
+import { CardItemContainer, ItemDetails } from './card-item.styles';
 
 const CardItem = ({ cardItem }) => {
   const {
     name, quantity, imageUrl, price,
   } = cardItem;
   return (
-    <div className="card-item-container">
+    <CardItemContainer>
       <img src={imageUrl} alt={`${name}`} />
-      <div className="item-details">
+      <ItemDetails>
         <span className="name">{name}</span>
         <span className="price">
           {quantity} x ${price}
         </span>
-      </div>
+      </ItemDetails>
 
-    </div>
+    </CardItemContainer>
   );
 };
 

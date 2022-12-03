@@ -1,26 +1,31 @@
 /* eslint-disable arrow-body-style */
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './card-dropdown.styles.scss';
+import { useSelector } from 'react-redux';
+import { CardDropdownContainer, EmptyMessage, CardItems } from './card-dropdown.styles';
 import Button from '../button/button.component';
 import CardItem from '../card-item/card-item.component';
-import { CardContext } from '../../context/card.context';
+import { selectCardItems } from '../../store/card/card.selector';
 
 const CardDropdown = () => {
-  const { cardItems } = useContext(CardContext);
   const navigate = useNavigate();
-
+  const cardItems = useSelector(selectCardItems);
   const gotToCheckout = () => {
     navigate('/checkout');
   };
 
   return (
-    <div className="card-dropdown-container">
-      <div className="card-items">
-        {cardItems.map((item) => <CardItem key={item.id} cardItem={item} />)}
-      </div>
+    <CardDropdownContainer>
+      <CardItems>
+        {
+          cardItems.length ? (
+            cardItems.map((item) => <CardItem key={item.id} cardItem={item} />)
+          ) : (
+            <EmptyMessage>Your card is empty</EmptyMessage>
+          )
+        }
+      </CardItems>
       <Button onClick={gotToCheckout}>GO TO CHECKOUT</Button>
-    </div>
+    </CardDropdownContainer>
   );
 };
 
