@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
-import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
+import { useDispatch } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import { ButtonContainer } from './sign-in.styles';
 import { SignUpBox } from '../sign-up/sign-up.styles';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
 
 const defaultFormFields = {
   email: '',
@@ -12,6 +13,7 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const {
     email,
@@ -23,26 +25,17 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup();
+    dispatch(googleSignInStart());
   };
 
   const handleSubnmit = async (event) => {
     event.preventDefault();
 
     try {
-      await signInAuthUserWithEmailAndPassword(email, password);
+      dispatch(emailSignInStart);
       resetFormFields();
     } catch (error) {
-      switch (error.code) {
-        case 'auth/wrong-password':
-          alert('incorrect password for email');
-          break;
-        case 'auth/user-not-found':
-          alert('no user with this email');
-          break;
-        default:
-          console.log(error);
-      }
+      console.log('user login failed', error);
     }
   };
 

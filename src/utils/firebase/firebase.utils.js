@@ -66,7 +66,7 @@ export const createUserDocumentFromAuth = async (userAuth, addisional = {}) => {
   }
 
   // eslint-disable-next-line consistent-return
-  return userDocRef;
+  return userSnapshot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
@@ -86,6 +86,17 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
+
+export const getCurrentUseer = () => new Promise((resolve, reject) => {
+  const unsubcribe = onAuthStateChanged(
+    auth,
+    (userAuth) => {
+      unsubcribe();
+      resolve(userAuth);
+    },
+    reject,
+  );
+});
 
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
   const collectionRef = collection(db, collectionKey);

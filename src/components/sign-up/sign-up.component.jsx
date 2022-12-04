@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
-import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
+import { useDispatch } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import { SignUpBox, Title } from './sign-up.styles';
 import Button from '../button/button.component';
+import { SignUpStart } from '../../store/user/user.action';
 
 const defaultFormFields = {
   displayName: '',
@@ -13,6 +14,7 @@ const defaultFormFields = {
 };
 
 const SignUpForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const {
     displayName,
@@ -32,8 +34,7 @@ const SignUpForm = () => {
     }
 
     try {
-      const { user } = await createAuthUserWithEmailAndPassword(email, password);
-      await createUserDocumentFromAuth(user, { displayName });
+      dispatch(SignUpStart(email, password, displayName));
       resetFormFields();
     } catch (error) {
       if (error.code === 'auth/eamil-already-in-use') {
