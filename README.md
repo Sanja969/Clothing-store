@@ -10,6 +10,10 @@ Ecommerce App which has navigations and routing what take user to different page
 
 To get a local copy up and running follow these simple example steps.
 
+# Live Demo
+
+https://x-clothing.netlify.app/
+
 
 ### Download it as a ZIP file
 or
