@@ -3,7 +3,7 @@ import { BaseButton } from '../button/button.styles';
 
 export const CardDropdownContainer = styled.div`
   position: absolute;
-  width: 240px;
+  width: 260px;
   height: 340px;
   display: flex;
   flex-direction: column;
