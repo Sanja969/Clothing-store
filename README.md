@@ -1,6 +1,6 @@
 ## Clothing Store App
 
-Ecommerce App which has navigations and routing what take user to different pages of categories and items. User is able to add item to basket. Basket is updating when user is adding or deleting items from basket. User can navigate to checkout page and see all items in basket. App is driven by Firebase google database, where users and products info are stored.
+Ecommerce App which has navigations and routing what take user to different pages of categories and items. User is able to add item to the basket. Basket is updating when user is adding or deleting items from the basket. User can navigate to checkout page and see all items in the basket. App is driven by Firebase google database, where users and products info are stored.
 
 ## Built With
 
