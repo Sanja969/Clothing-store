@@ -4,7 +4,7 @@ Ecommerce App which has navigations and routing what take user to different page
 
 ## Built With
 
-- React, Redux, JS6, Firebase, SCSS, Saga, StyledComponents, Reselect
+- React, Redux, JS6, Firebase, SCSS, redux-saga, styled-components, redux-persist, reselect
 
 # Getting Started
 
