@@ -1,6 +1,14 @@
 ## Clothing Store App
 
-Ecommerce App which has navigations and routing what take user to different pages of categories and items. User is able to add item to the basket. Basket is updating when user is adding or deleting items from the basket. User can navigate to checkout page and see all items in the basket. App is driven by Firebase google database, where users and products info are stored.
+The E-commerce App is a feature-rich application that allows users to explore a wide range of categories and items, navigate through various pages, and conveniently add products to their basket. Built with a focus on seamless user experience, the app enables effortless shopping and efficient management of items.
+
+With the E-commerce App, users can easily navigate through different pages representing various categories and items. The intuitive navigation and routing system provides a smooth browsing experience, allowing users to effortlessly discover products of interest.
+
+One of the key features of the app is the real-time basket update functionality. As users add or remove items from their basket, the app instantly reflects these changes, ensuring an accurate and up-to-date representation of the basket's contents. This enables users to keep track of their selected items and make informed decisions during the shopping process.
+
+The app utilizes the Firebase Google Database, a powerful and reliable backend solution, to store user and product information. This ensures secure and efficient data management, providing a seamless experience for both users and administrators.
+
+From the app's checkout page, users can conveniently review all the items in their basket before proceeding to the purchase. This feature allows users to ensure the accuracy of their order and make any necessary adjustments.
 
 ## Built With
 
